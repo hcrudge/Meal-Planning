@@ -4,36 +4,31 @@ const shoppingList = [
         id: 1,
         item: "milk", 
         UOM: "1/2 gallon",
-        price: 1.75,
-        quantity: 1,
+        price: 1.75
     },
     {
         id: 2,
         item: "eggs",
         UOM: "1 dozen",
-        price: 1,
-        quantity:1
+        price: 1
     },
     {
         id:3,
         item: "half & half",
         UOM: "1 quart",
-        price: 2.05,
-        quantity: 2
+        price: 2.05
     },
     {
         id: 4,
         item: "ground beef",
         UOM: "1 pound",
-        price: 3.50, 
-        quantity: 1
+        price: 9.00
     },
     {
         id:5,
         item: "onions",
         UOM: "3 pounds",
-        price: 1.50,
-        quantity: 1
+        price: 1.50
     }
 ]
 // Chapter 1
@@ -52,14 +47,13 @@ const addToShoppingList = (listObject) =>{
 
 
 const today = new Date();
-const date = (today.getMonth()+1) + '/' + today.getDate() + '/' + today.getFullYear();
+const date = today.getMonth() + '/' + today.getDate() + '/' + today.getFullYear();
 
 const cheese = 
 {
     item: "cheese",
     UOM: "8 ounces",
     price: 3.50,
-    quantity: 1,
     dateCreated: date
 }
 const salami = 
@@ -67,7 +61,6 @@ const salami =
     item: "salami",
     UOM: "5 ounces",
     price: 4.00,
-    quantity: 1,
     dateCreated: date
 }
 const salmon = 
@@ -75,7 +68,6 @@ const salmon =
     item: "salmon",
     UOM: "2.5 pounds",
     price: 16.00,
-    quantity: 1,
     dateCreated: date
 }
 const flour = 
@@ -83,7 +75,6 @@ const flour =
     item: "flour",
     UOM: "1 pound",
     price: 1.75,
-    quantity: 1,
     dateCreated:date
 }
 const butter = 
@@ -91,7 +82,6 @@ const butter =
     item: "butter",
     UOM: "1 pound",
     price: 2.50,
-    quantity: 1,
     dateCreated: date
 
 }
@@ -104,10 +94,15 @@ addToShoppingList(flour)
 addToShoppingList(butter)
 
 
-console.log(shoppingList)
+// console.log(shoppingList)
 
 
+// Chapter 3
 
+const tooExpensive = 8
 
-
-
+for (const list of shoppingList) {
+    if (list.price >= tooExpensive) { 
+    console.log(list)
+    }
+}
